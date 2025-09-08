@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> mi pagina</title>
+        <title> Mision</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,13 +13,95 @@
                 font-style: normal;
             }
         </style>
+        <script>
+            function saludar(){
+                alert("Hola");
+                document.getElementById("texto").style.display = "none";
+            }
+            function tecla(e){
+                if (e.key == "Enter"){
+                    e.preventDefault();
+                    alert("Enter");
+                }
+            }
+            let x, y, z;
+            x = 5;
+            y = 2;
+            z = x + y;
+            z = x % y;
+            z += 2; // z = z + 2;
+            z *= 2; // z = z * 2;
+            z = x ** y; // 25
+            console.log(z);
+            // Estructuras de control python and javascript && : python or javascript ||
+            if (z < 10 && y === 2){ // y == 2 y = "2" < > <= >= == ===
+                console.log("z unitario");
+            } else if (z < 20){
+                console.log("z es decimal");
+            } else {
+                console.log("Otro Caso");
+            }
+            try {
+                console.log("Hola");
+                throw "Muy Lento";
+            } catch (err) {
+                console.log(err);
+            }
+            console.log(typeof(z));
+            class Persona {}
+            const p = new Persona();
+            if (p instanceof Persona){
+                console.log("Es una persona");
+            }
+            if (Math.random() < 0.5){
+                console.log("Cara");
+            } else {
+                console.log("Sello");
+            }
+            // Iteraciones
+            for(let i=0; i < 3; i++){ // for i in range(3): print(i)
+                console.log(i);
+            }
+            let j = 0;
+            while(j < 3){
+                console.log(j);
+                j++;
+            }
+            let k = 0;
+            do {
+                console.log(k);
+                k++
+            } while(k< 3)
+            const marcas = ["BMW", "Volvo", "Ford"];
+            let l = 0;
+            let todasMarcas = "";
+            for(;marcas[l];){ // for i in marcas :
+                todasMarcas += " " + marcas[l];
+                l++;
+            }
+            console.log(todasMarcas);
+            let m = 0;
+            let tMarcas = "";
+            while(marcas[m]){
+                tMarcas += " " + marcas[m];
+                m++;
+            }
+            console.log(tMarcas);
+        </script>
     </head>
     <body>
-        <div class="container bg-secondary">
-            <div class="row">
-                <div class="col-4 justify-content-center bg-primary text-light" style="font-size: 3vw;">Hola</div>
-            </div>
-            
-        </div>
-    </body>
+        <p id="msg"></p>
+        <select name="comuna" id="com"></select>
+        <script>
+            console.log("Empezo codigo");
+            document.getElementById("msg").innerText = "Hola";
+            document.getElementById("com").innerHTML = '<option value="1">Santiago</option><option value="2">Talca</option>';
+        </script>
+        <button type="button" onclick="alert('Clic');">Evento</button>
+        <button type="button" onclick="window.print();">Imprimir</button>
+        <button type="button" onclick="saludar();">Saluda</button>
+        <input id="texto" type="text" onkeydown="tecla(event);" />
+    </body>    
 </html>
+
+
